@@ -22,4 +22,10 @@ describe ('ShoppingBasket', function() {
     assert.strictEqual(2, shoppingBasket.basket.length)
   })
 
+  it('can remove items from basket', function(){
+    shoppingBasket.addItem(item);
+    shoppingBasket.removeLastItem();
+    assert.strictEqual(0, shoppingBasket.basket.length);
+  })
+
 })
