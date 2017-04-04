@@ -14,13 +14,12 @@ ShoppingBasket.prototype = {
     for (var i = 0; i < this.basket.length; i++) {
       this.totalValue += this.basket[i].price
     }
+  },
+  reduceTotalValueByDiscount: function(){
+    if (this.totalValue >= 2000) {
+      this.totalValue *= 0.9
+    }
   }
-  // discountedValue: function(totalValue){
-  //   // var value = this.basket.totalValue()
-  //   if (totalValue >= 2000) {
-  //     return totalValue * 0.9
-  //   }
-  // }
 }
 
 module.exports = ShoppingBasket

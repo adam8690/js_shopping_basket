@@ -38,10 +38,12 @@ describe ('ShoppingBasket', function() {
     assert.strictEqual(600, shoppingBasket.totalValue)
   })
 
-  // it('can apply 10% over £20', function(){
-  //   shoppingBasket.addItem(item)
-  //   shoppingBasket.addItem(item2)
-  //   assert.strictEqual(1980, shoppingBasket.discountedValue())
-  // })
+  it('can apply 10% over £20', function(){
+    shoppingBasket.addItem(item)
+    shoppingBasket.addItem(item2)
+    shoppingBasket.updateTotalValue()
+    shoppingBasket.reduceTotalValueByDiscount()
+    assert.strictEqual(1980, shoppingBasket.totalValue)
+  })
 
 })
