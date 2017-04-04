@@ -46,4 +46,11 @@ describe ('ShoppingBasket', function() {
     assert.strictEqual(1980, shoppingBasket.totalValue)
   })
 
+  it('can apply 5% discount if customer has discount card', function(){
+    shoppingBasket.addItem(item)
+    shoppingBasket.updateTotalValue()
+    shoppingBasket.reduceTotalValueIfDiscountCardPresent()
+    assert.strictEqual(190, shoppingBasket.totalValue)
+  })
+
 })
