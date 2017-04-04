@@ -1,5 +1,6 @@
 var ShoppingBasket = function(){
   this.basket = []
+  this.totalValue = 0
 }
 
 ShoppingBasket.prototype = {
@@ -9,13 +10,17 @@ ShoppingBasket.prototype = {
   removeLastItem: function(){
     this.basket.pop();
   },
-  totalValue: function(){
-    totalValue = 0
+  updateTotalValue: function(){
     for (var i = 0; i < this.basket.length; i++) {
-      totalValue += this.basket[i].price
+      this.totalValue += this.basket[i].price
     }
-    return totalValue
   }
+  // discountedValue: function(totalValue){
+  //   // var value = this.basket.totalValue()
+  //   if (totalValue >= 2000) {
+  //     return totalValue * 0.9
+  //   }
+  // }
 }
 
 module.exports = ShoppingBasket

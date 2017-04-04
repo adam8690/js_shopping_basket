@@ -6,10 +6,12 @@ describe ('ShoppingBasket', function() {
 
   var shoppingBasket
   var item;
+  var item2;
 
   beforeEach(function(){
     shoppingBasket = new ShoppingBasket()
     item = new Item("eggs", 200, true);
+    item2 = new Item("champagne", 2000, true);
   })
 
   it ('starts empty', function() {
@@ -32,7 +34,14 @@ describe ('ShoppingBasket', function() {
     shoppingBasket.addItem(item)
     shoppingBasket.addItem(item)
     shoppingBasket.addItem(item)
-    assert.strictEqual(600, shoppingBasket.totalValue())
+    shoppingBasket.updateTotalValue()
+    assert.strictEqual(600, shoppingBasket.totalValue)
   })
+
+  // it('can apply 10% over £20', function(){
+  //   shoppingBasket.addItem(item)
+  //   shoppingBasket.addItem(item2)
+  //   assert.strictEqual(1980, shoppingBasket.discountedValue())
+  // })
 
 })
