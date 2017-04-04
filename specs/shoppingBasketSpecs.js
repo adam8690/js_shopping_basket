@@ -28,4 +28,11 @@ describe ('ShoppingBasket', function() {
     assert.strictEqual(0, shoppingBasket.basket.length);
   })
 
+  it('can get total value in basket', function(){
+    shoppingBasket.addItem(item)
+    shoppingBasket.addItem(item)
+    shoppingBasket.addItem(item)
+    assert.strictEqual(600, shoppingBasket.totalValue())
+  })
+
 })
